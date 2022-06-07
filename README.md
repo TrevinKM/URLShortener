@@ -8,7 +8,7 @@ npm install
 
 Once all the depencies are installed then
 
-npm run testRun
+npm run testStart
 
 can be run to run a version of the program at 
 
