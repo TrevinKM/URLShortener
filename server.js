@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost/urlShortener', {
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended: false}))
+app.listen(process.env.PORT || 3000);
 
 app.get('/', async (req, res) => {
     const shortUrls = await ShortUrl.find()
@@ -38,4 +39,3 @@ app.get('/', async (req, res) => {
       }
     
   })
-app.listen(process.env.PORT || 3000);
