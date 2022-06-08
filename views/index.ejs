@@ -30,7 +30,29 @@
                     <tr>
                         <td><%= shortUrl.hits %></td>
                         <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
-                        <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+                        <td><a id="copyText" href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+                        <td>
+                            <input type="button"  class="btn btn-success" onclick="copyLink()" data-toggle="tooltip" title="Copy to Clipboard" value="copy link" readonly />
+
+                                <script>
+                                function copyLink() {
+                                    navigator.clipboard.writeText(shortUrl.short);
+                                    // let copyText = document.getElementById("copyText"); 
+
+                                    // copyText.select();
+                                    // copyText.setSelectionRange(0, 99999);
+                                    // navigator.clipboard.writeText(copyText.value).then(() => {
+                                    //     alert("success")
+                                    // })
+                                    // .catch (() => {
+                                    //     alert("no success")
+                                    // });
+
+                                    // document.execCommand('copy');
+                                }
+                                </script>
+                        </td>
+                        <td><input type="button"  class="btn btn-danger" onclick="copyLink()" data-toggle="tooltip" title="Copy to Clipboard" value="delete" readonly /></td>
                     </tr>
                   <% }) %>
             </tbody>
